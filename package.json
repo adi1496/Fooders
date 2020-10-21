@@ -5,7 +5,11 @@
   "main": "index.js",
   "scripts": {
     "watch:scss": "node-sass src/scss/main.scss src/css/style.css -w",
-    "build:scss": "node-sass src/scss/main.scss dest/css/style.css"
+    "compile:scss": "node-sass src/scss/main.scss dest/css/style.compiled.css",
+    "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' dest/css/style.compiled.css -o dest/css/style.prefix.css",
+    "compress:css": "node-sass dest/css/style.prefix.css dest/css/style.css --output-style compressed",
+    "build:css": "npm-run-all compile:scss prefix:css compress:css",
+    "build:js": "parcel build ./src/js/index.js --out-dir ./dest/js --out-file bundle.js"
   },
   "author": "Adrian Matei",
   "license": "ISC",
@@ -13,6 +17,11 @@
     "@babel/polyfill": "^7.12.1"
   },
   "devDependencies": {
-    "node-sass": "^4.14.1"
+    "autoprefixer": "^7.1.4",
+    "concat": "^1.0.3",
+    "node-sass": "^4.14.1",
+    "npm-run-all": "^4.1.5",
+    "parcel-bundler": "^1.12.4",
+    "postcss-cli": "^4.1.1"
   }
 }

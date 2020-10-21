@@ -1,5 +1,5 @@
 //only for bundle
-// import '@babel/polyfill';
+import '@babel/polyfill';
 import {searchAPI} from './models/searchModel.js';
 import {dom} from './views/base.js';
 
