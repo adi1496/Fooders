@@ -1,0 +1,98 @@
+.btn {
+    outline: none;
+    border: none;
+    border-radius: none;
+    cursor: pointer;
+}
+
+.btn-search {
+    background-color: $color-primary;
+    padding: .5rem 2rem;
+    padding-top: .3rem;
+    border-radius: 100px;
+    font-family: inherit;
+    font-size: 1.7rem;
+    color: $color-text;
+    margin-left: -7rem;
+    margin-right: 3rem;
+    position: relative;
+    transition: all .3s;
+
+    &:hover {
+        background-image: radial-gradient($color-primary, $color-accent);
+        transform: scale(1.1);
+    }
+
+    &:active {
+        transform: translateY(1px);
+    }
+}
+
+.btn-selection {
+    padding: 1rem 3rem;
+    border-radius: 50px;
+    background-image: radial-gradient($color-primary, $color-primary-dark);
+    font-family: inherit;
+    font-size: 1.6rem;
+    color: $color-text;
+    transition: all .3s;
+
+
+    &:hover {
+        background-image: radial-gradient($color-primary, $color-accent);
+        transform: translateY(-3px);
+        // box-shadow: 0 1rem 3rem rgba($color-accent, .9);
+        animation: blink 3s infinite;
+    }
+
+    &:active {
+        transform: scale(.9);
+    }
+
+    @media only screen and(max-width: $bp-smallest) {
+        &:last-of-type {
+            margin-top: 2rem;
+            grid-column: 1 / -1;
+            justify-self: center;
+        }
+    }
+}
+
+.btn-card {
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    // border-radius: 100px;
+    background-color: $color-primary-light;
+    font-family: inherit;
+    font-size: 2rem;
+    color: $color-text-dark;
+    position: relative;
+    z-index: 1;
+    transition: color .3s;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: 0;
+        width: 0;
+        z-index: -1;
+        background-image: radial-gradient($color-primary-light, $color-accent);
+        transform: translate(-50%, -50%);
+        // transition: width .5s, height .2s;
+    }
+
+    &:hover::before {
+        animation: fill-button 1s;
+        animation-fill-mode: forwards;
+    }
+
+    &:hover {
+        color: $color-text-dark;
+    }
+
+    &:active {
+        background-image: radial-gradient($color-primary-light, $color-accent);
+    }
+}

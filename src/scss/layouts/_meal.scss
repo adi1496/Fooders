@@ -1,0 +1,132 @@
+.meal {
+    width: 80%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: rgba($color-text-dark, .95);
+
+    &__photo {
+        position: relative;
+        height: 35rem;
+        width: auto;
+        z-index: 2;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            // padding: 10rem;
+            z-index: -1;
+
+            transform: translate(-50%, -50%);
+        }
+
+        &:hover::before {
+            transform: scale(1.1), translate(-50%, -50%);
+            border: 5px solid $color-accent;
+            border-radius: 20px;
+            width: 110%;
+            height: 110%;
+        }
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+
+    &__img {
+        justify-self: center;
+        width: 100%;
+        height: 100%;
+        border-radius: 20px;
+    }
+
+    &__box-container {
+        // grid-column: 1 / -1;
+        margin: 3rem 1rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+        justify-items: center;
+        gap: 3rem;
+    }
+
+    &__box {
+        display: grid;
+        grid-template-columns: min-content 1fr;
+        color: $color-text;
+    }
+
+    &__icon {
+        grid-row: 1 / 3;
+        width: 3rem;
+        height: 3rem;
+        fill: currentColor;
+        margin-right: 1rem;
+    }
+
+    &__box-title {
+        font-size: 1.8rem;
+    }
+
+    &__text-box {
+        font-size: 1.4rem;
+    }
+
+    &__ingredients {
+        grid-column: 1 / -1;
+        margin-top: 3rem;
+    }
+
+    &__ingredients-text {
+        font-size: 2.5rem;
+        // color: $color-text;
+        background-image: linear-gradient(to right, $color-primary, $color-accent);
+        color: transparent;
+        -webkit-background-clip: text;
+        margin-bottom: 1rem;
+    }
+
+    &__list {
+        list-style: none;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        justify-items: center;
+        gap: 2rem;
+    }
+
+    &__item {
+        font-size: 1.6rem;
+        color: $color-text;
+        cursor: pointer;
+    }
+
+    &__instructions {
+        grid-column: 1 / -1;
+        display: grid;
+    }
+
+    &__instructions-text {
+        margin-top: 5rem;
+        margin-bottom: 1rem;
+        font-size: 2.5rem;
+        // color: $color-text;
+        background-image: linear-gradient(to right, $color-primary, $color-accent);
+        color: transparent;
+        -webkit-background-clip: text;
+    }
+    
+    &__text {
+        justify-self: center;
+        font-size: 1.6rem;
+        font-weight: 600;
+        color: $color-text;
+        width: 80%;
+        line-height: 2;
+        // word-spacing: .5rem;
+        letter-spacing: .1rem;
+    }
+}

@@ -1,0 +1,18 @@
+{
+  "name": "fooders",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch:scss": "node-sass src/scss/main.scss src/css/style.css -w",
+    "build:scss": "node-sass src/scss/main.scss dest/css/style.css"
+  },
+  "author": "Adrian Matei",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/polyfill": "^7.12.1"
+  },
+  "devDependencies": {
+    "node-sass": "^4.14.1"
+  }
+}

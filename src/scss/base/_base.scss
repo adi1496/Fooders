@@ -1,0 +1,54 @@
+//Colors
+
+$color-primary: #607D8B;
+$color-primary-dark: #455A64;
+$color-primary-light: #CFD8DC;
+
+$color-accent: #FF5252;
+
+$color-text: #FFFFFF;
+$color-text-secondary: #757575;
+$color-text-dark: #212121;
+
+
+//break-points
+$bp-largest: 68.75em;   //1100px
+$bp-large: 59.375em;    //900px
+$bp-medium: 43.75em;    //700px
+$bp-small: 34.375em;    //550px
+$bp-smallest: 25em;     //400px
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;   //1rem = 10px
+
+    @media only screen and(max-width: $bp-largest) {
+        font-size: 56.25%;
+    }
+
+    @media only screen and(max-width: $bp-large) {
+        font-size: 50%;
+    }
+
+}
+
+body {
+    font-family: 'Sansita Swashed', cursive;
+    font-weight: 400;
+    line-height: 1.6;
+    background-image: linear-gradient(to bottom, rgba($color-text-dark, .6) 0%, rgba($color-text-dark, .9) 10%, rgba($color-text-dark, .95) 30%, rgba($color-text-dark, .95) 40%, rgba($color-text-dark, .6) 90%), url(./../img/background.jpg);
+    background-size: cover;
+    min-height: 100vh;
+}

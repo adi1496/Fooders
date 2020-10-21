@@ -1,0 +1,107 @@
+.card {
+    border-radius: 10px;
+    overflow: hidden;
+    background-image: radial-gradient($color-primary, $color-text-dark);
+    display: grid;
+
+    &__photo{
+        position: relative;
+    }
+
+    &__img {
+        height: 20rem;
+        width: 100%;
+        object-fit: cover;
+        display: block;
+        position: relative;
+        z-index: 1;
+
+        
+    }
+
+    &__description{
+        margin: 2rem;
+        padding: 0 2rem;
+        font-size: 1.5rem;
+        color: #e4e0e0;
+        height: 20rem;
+        overflow-y: scroll;
+        border-radius: 10px;
+
+        &::-webkit-scrollbar {
+            width: 6px;
+            border-radius: 10px;
+        }
+
+        &::-webkit-scrollbar-track {
+            // width: 8px;
+            background-color: $color-primary;
+            border-radius: 10px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            width: 5px;
+            background-color: $color-accent;
+            border-radius: 10px;
+        }
+    }
+
+    // for recepies only
+    &__box-container {
+        margin: 3rem 1rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        row-gap: 3rem;
+        column-gap: 1rem;
+    }
+
+    &__box {
+        display: grid;
+        grid-template-columns: min-content 1fr;
+        color: $color-text-dark;
+    }
+
+    &__icon {
+        grid-row: 1 / 3;
+        width: 3rem;
+        height: 3rem;
+        fill: currentColor;
+        margin-right: 1rem;
+    }
+
+    &__box-title {
+        font-size: 1.8rem;
+    }
+
+    &__text-box {
+        font-size: 1.4rem;
+    }
+
+    &__pages{
+        grid-column: 1 / -1;
+        justify-self: center;
+        align-items: center;
+        display: flex;
+    }
+
+    &__page {
+        font-size: 1.7rem;
+        color: $color-text;
+        cursor: pointer;
+        padding: 0 .5rem;
+
+        &:not(:last-child) {
+            margin-right: 1rem;
+        }
+
+        &:hover {
+            color: $color-accent;
+            background-color: $color-primary;
+        }
+
+        &--active {
+            font-size: 2rem;
+            color: $color-accent;
+        }
+    }
+}

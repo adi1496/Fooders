@@ -1,0 +1,75 @@
+.section-search {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 4rem;
+
+    @media only screen and(max-width: $bp-medium) {
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+
+    &__heading-2 {
+        margin: 3rem 0;
+        grid-column: 1 / -1;
+        justify-self: center;
+    }
+
+    &__search {
+        width: 100%;
+        display: grid;
+        // grid-template-columns: max-content min-content;
+        grid-template-columns: 1fr min-content;
+        justify-content: center;
+
+        @media only screen and(max-width: $bp-medium) {
+            width: 75%;
+            margin-bottom: 3rem;
+        }
+
+        @media only screen and(max-width: $bp-small) {
+            width: 100%;
+            margin-bottom: 3rem;
+        }
+    }
+
+    &__input-search {
+        width: 90%;
+        justify-self: end;
+        background-color: $color-primary-dark;
+        height: 4rem;
+        outline: none;
+        border: none;
+        border-radius: 100px;
+        padding: .5rem 3rem;
+        font-family: inherit;
+        font-size: 1.7rem;
+        color: $color-text;
+        position: relative;
+        transition: all .3s;
+
+        &:focus {
+            transform: scale(1.1);
+        }
+    }
+
+    &__buttons {
+        display: grid;
+        grid-template-columns: repeat(3, max-content);
+        justify-content: center;
+        column-gap: 2rem;
+
+        @media only screen and(max-width: $bp-smallest) {
+            grid-template-columns: repeat(2, max-content);
+        }
+    }
+
+    &::after {
+        grid-column: 1 / -1;
+        justify-self: center;
+        content: "";
+        height: 4px;
+        width: 80%;
+        background-image: linear-gradient(to right, $color-primary, $color-accent);
+        margin-top: 4rem;
+    }
+}

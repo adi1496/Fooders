@@ -1,0 +1,17 @@
+.section-content {
+    margin-top: 6rem;
+    padding-bottom: 8rem;
+
+    &__cards {
+        width: 90%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 30rem);
+        grid-gap: 4rem;
+        justify-content: center;
+
+        @media only screen and(max-width: $bp-largest) {
+            width: 95%;
+        }
+    }
+}
